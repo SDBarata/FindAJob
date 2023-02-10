@@ -1,18 +1,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-//main().catch(err => console.log(err));
+
 
 const app = express();
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
-
-
-/* async function main() {
-    mongoose.set('strictQuery',false);
-    await mongoose.connect('mongodb://27017/jobsDB');
-    console.log("Connected");
-} */
 
 const url = 'mongodb://127.0.0.1:27017/jobsDB'
 mongoose.set("strictQuery", false);
@@ -58,8 +51,51 @@ firstJob.save()
     }
 }); */
 
-/* app.route("/jobs")
-    .get((req, res)) */
+app.route("/")
+    .get((req, res) => {
+        Job.find(function (err, foundJob){
+            if(!err) {
+                res.send(foundJob);
+
+            } 
+            else {
+                res.send(err);
+            }
+        })
+    })
+
+    .post((req, res) => {
+        const newJob = new Job({
+            title: req.body.title,
+            description: req.body.description,
+            company: req.body.company,
+            location: req.body.location,
+            jobType: req.body.jobType,
+            jobFunction:req.body.jobFunction,
+            salary: req.body.salary,
+            creationDate: req.body.creationDate,
+            updatedDate: req.body.updatedDate,
+        });
+
+        newJob.save(function (err) {
+            if (!err) {
+                res.send("The article was succefully added");
+            }
+            else {
+                res.send(err);
+            }
+        });
+    });
+
+app.route("/myjob")
+
+    .delete((req, res) => {
+        Job.deleteOne(
+            {title: req.params  });
+        res.send("Job was succeffully removed")
+    })
+
+
 
 
 app.listen(3000, () => console.log("The server is running on 3000 port"));
