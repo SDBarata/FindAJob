@@ -1,10 +1,4 @@
-const mongoose = require("mongoose");
-
-const url = 'mongodb://127.0.0.1:27017/jobsDB'
-mongoose.set("strictQuery", false);
-mongoose.connect(url, () => {
-  console.log("Connected to MongoDB");
-});
+const mongoose = require('mongoose');
 
 const jobsSchema = new mongoose.Schema({
     title: String,
@@ -18,4 +12,4 @@ const jobsSchema = new mongoose.Schema({
     updatedDate: Date
 });
 
-module.exports = mongoose.model("Job", jobsSchema);
+module.exports = mongoose.model('Job', jobsSchema);
