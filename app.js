@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-const initDatabase = require("./src/infrastructure/database");
+const initDatabase = require("./src/db/database");
 
 initDatabase();
 
