@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "./components/Header/Header";
-import ShowJobs from "./components/ShowJob/ShowJob";
+import GetJobs from "./components/GetJobs/GetJobs";
 
 function App() {
   return (
     <div>
       <Header />
-      <ShowJobs />
+      <GetJobs />
     </div>
   );
 }
