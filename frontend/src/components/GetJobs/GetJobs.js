@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import GetJobs from "../ShowJobs/ShowJobs";
+import ShowJobs from "../ShowJobs/ShowJobs";
 //import api from "../../services/api";
 
-export default function ShowJobs() {
+export default function GetJobs() {
   const [jobs, setJobs] = useState([]);
 
   const baseURL = "http://localhost:3000/api/jobs/";
@@ -16,15 +17,20 @@ export default function ShowJobs() {
     getJobs();
   }, []);
 
+  function deleteJob(id) {
+    setJobs(jobs.filter((listOfJobs, index) => index !== id));
+  }
+
   return (
     <div>
       {jobs.map((listOfJobs, index) => {
         return (
           <GetJobs
             key={index}
-            index={index}
+            id={index}
             title={listOfJobs.title}
             description={listOfJobs.description}
+            onDelete={deleteJob}
           />
         );
       })}

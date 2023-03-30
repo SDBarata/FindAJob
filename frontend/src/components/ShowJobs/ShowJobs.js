@@ -2,16 +2,19 @@ import React from "react";
 //import api from "../../services/api";
 
 export default function ShowJobs(props) {
+  function deleteClick(event) {
+    event.preventDefault();
+    props.onDelete(props.id);
+  }
+
   return (
-    <span>
-      <h3>Title</h3>
-      {props.title}
-      <h3>Description</h3>
-      {props.description}
-    </span>
+    <div>
+      <h3>Job</h3>
+      <li>{props.title}</li>
+      <li>{props.description}</li>
+      <form>
+        <button onClick={deleteClick}>Remove Job</button>
+      </form>
+    </div>
   );
 }
-
-/* <form>
-        <button onClick={getAllJobs}>Get available jobs!</button>
-      </form> */
