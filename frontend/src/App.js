@@ -1,15 +1,8 @@
 import React from "react";
-import Header from "./components/Header/Header";
-import GetJobs from "./components/GetJobs/GetJobs";
-import Routes from "./routes/routes";
+import Routing from "./routes/routes";
 
 function App() {
-  return (
-    <div>
-      <Header />
-      <Routes />
-    </div>
-  );
+  return <Routing />;
 }
 
 export default App;

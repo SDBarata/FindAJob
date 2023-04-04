@@ -1,15 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 import GetJobs from "../components/GetJobs/GetJobs";
 
-export default function Routes() {
+export default function Routing() {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={GetJobs} />
-      </Switch>
+      <Routes>
+        <Route path="/jobs" element={<GetJobs />} />
+      </Routes>
     </BrowserRouter>
   );
 }

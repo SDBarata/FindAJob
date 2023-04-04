@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import ShowJobs from "../ShowJobs/ShowJobs";
 //import api from "../../services/api";
@@ -11,8 +10,14 @@ export default function GetJobs() {
 
   useEffect(() => {
     const getJobs = async () => {
-      const response = await axios.get(baseURL);
-      setJobs(response.data);
+      try {
+        const response = await axios.get(baseURL);
+
+        setJobs(response.data);
+        console.log(jobs);
+      } catch (error) {
+        console.log("Ups!! Cannot get the jobs for you!");
+      }
     };
     getJobs();
   }, []);
@@ -25,7 +30,7 @@ export default function GetJobs() {
     <div>
       {jobs.map((listOfJobs, index) => {
         return (
-          <GetJobs
+          <ShowJobs
             key={index}
             id={index}
             title={listOfJobs.title}
