@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import ShowJobs from "../ShowJobs/ShowJobs";
+import ShowJobs from "../../pages/ShowJobs";
 //import api from "../../services/api";
 
 export default function GetJobs() {
@@ -20,7 +20,7 @@ export default function GetJobs() {
       }
     };
     getJobs();
-  }, []);
+  }, [jobs]);
 
   function deleteJob(id) {
     setJobs(jobs.filter((listOfJobs, index) => index !== id));
@@ -42,17 +42,3 @@ export default function GetJobs() {
     </div>
   );
 }
-
-/* function getAllJobs(event) {
-  event.preventDefault();
-  console.log("Dá não?");
-  const getJobs = async () => {
-    const response = await axios.get(baseURL);
-    setJobs(response.data);
-  };
-  getJobs();
-}
-console.log(jobs);
-<form>
-  <button onClick={getAllJobs}>Get available jobs!</button>
-</form>;  */
