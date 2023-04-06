@@ -14,7 +14,6 @@ export default function GetJobs() {
         const response = await axios.get(baseURL);
 
         setJobs(response.data);
-        console.log(jobs);
       } catch (error) {
         console.log("Ups!! Cannot get the jobs for you!");
       }
@@ -23,7 +22,15 @@ export default function GetJobs() {
   }, [jobs]);
 
   function deleteJob(id) {
-    setJobs(jobs.filter((listOfJobs, index) => index !== id));
+    const jobToDelete = jobs[id]._id;
+    const removeJob = async () => {
+      try {
+        const response = await axios.delete(`${baseURL}${jobToDelete}`);
+      } catch (error) {
+        console.log("Ups!! Cannot remove the jobs for you!");
+      }
+    };
+    removeJob();
   }
 
   return (
