@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ShowJobs from "../../pages/ShowJobs";
 //import api from "../../services/api";
+import AddJob from "../AddJob/AddJob";
 
 export default function GetJobs() {
   const [jobs, setJobs] = useState([]);
@@ -33,6 +34,17 @@ export default function GetJobs() {
     removeJob();
   }
 
+  function AddJob() {
+    const addJob = async () => {
+      try {
+        const response = await axios.post(baseURL);
+      } catch (error) {
+        console.log("Sorry the job cannot be inserted!");
+      }
+    };
+    addJob();
+  }
+
   return (
     <div>
       {jobs.map((listOfJobs, index) => {
@@ -46,6 +58,7 @@ export default function GetJobs() {
           />
         );
       })}
+      <AddJob />
     </div>
   );
 }
