@@ -21,14 +21,11 @@ export default function ShowJobs(props) {
         <li>{props.description}</li>
         <form>
           <button onClick={deleteClick}>Remove Job</button>
+          <span>
+            <button onClick={deleteJobs}>Remove all Jobs</button>
+          </span>
         </form>
       </div>
-
-      <span>
-        <form>
-          <button onClick={deleteJobs}>Remove all Jobs</button>
-        </form>
-      </span>
     </>
   );
 }

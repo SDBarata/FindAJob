@@ -9,7 +9,7 @@ export default function AddJob() {
 
   const baseURL = "http://localhost:3000/api/jobs/";
 
-  function handleClick(event) {
+  function submitJob(event) {
     event.preventDefault();
     const addJob = async () => {
       const response = axios.post(baseURL, addNewJob);
@@ -19,29 +19,28 @@ export default function AddJob() {
   }
 
   function handleChange(event) {
-    console.log("entra?");
-    const [name, value] = event.target;
+    const { name, value } = event.target;
     setNewJobs({ ...addNewJob, [name]: value });
   }
 
   return (
     <div>
-      <form>
+      <form className="create-job">
         <input
           onChange={handleChange}
           value={addNewJob.title}
           type="text"
           name="title"
           placeholder="Add a job!"
-        ></input>
+        />
         <input
           onChange={handleChange}
           value={addNewJob.description}
           type="text"
           name="description"
           placeholder="Add a description!"
-        ></input>
-        <button onClick={handleClick}></button>
+        />
+        <button onClick={submitJob}></button>
       </form>
     </div>
   );
