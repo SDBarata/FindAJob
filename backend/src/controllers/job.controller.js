@@ -74,4 +74,20 @@ const deleteJob = async (req, res) => {
   }
 };
 
-module.exports = { getAllJobs, getJobById, createJob, editJob, deleteJob };
+const deleteAllJobs = async (req, res) => {
+  try {
+    const allJobs = await Model.deleteMany();
+    res.send("All the jobs have been deleted");
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+module.exports = {
+  getAllJobs,
+  getJobById,
+  createJob,
+  editJob,
+  deleteJob,
+  deleteAllJobs,
+};
