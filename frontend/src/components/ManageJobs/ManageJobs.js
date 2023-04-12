@@ -3,8 +3,9 @@ import axios from "axios";
 import ShowJobs from "../../pages/ShowJobs";
 //import api from "../../services/api";
 import AddJob from "../AddJob/AddJob";
+import Home from "../../pages/Home";
 
-export default function GetJobs() {
+export default function ManageJobs() {
   const [jobs, setJobs] = useState([]);
 
   const baseURL = "http://localhost:3000/api/jobs/";
@@ -34,31 +35,34 @@ export default function GetJobs() {
     removeJob();
   }
 
-  function AddJob() {
-    const addJob = async () => {
+  function deleteAllJobs() {
+    console.log("e aqui?");
+    const deleteJobs = async () => {
       try {
-        const response = await axios.post(baseURL);
+        const response = await axios.delete(baseURL);
       } catch (error) {
         console.log("Sorry the job cannot be inserted!");
       }
     };
-    addJob();
+    deleteJobs();
   }
 
   return (
-    <div>
-      {jobs.map((listOfJobs, index) => {
-        return (
-          <ShowJobs
-            key={index}
-            id={index}
-            title={listOfJobs.title}
-            description={listOfJobs.description}
-            onDelete={deleteJob}
-          />
-        );
-      })}
-      <AddJob />
-    </div>
+    <>
+      <div>
+        {jobs.map((listOfJobs, index) => {
+          return (
+            <ShowJobs
+              key={index}
+              id={index}
+              title={listOfJobs.title}
+              description={listOfJobs.description}
+              onDelete={deleteJob}
+              onDeleteAll={deleteAllJobs}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 }
