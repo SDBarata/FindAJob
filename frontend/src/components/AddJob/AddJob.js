@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function AddJob() {
-  const [addNewJob, setNewJobs] = useState({
+  const [newJob, setNewJobs] = useState({
     title: "",
     description: "",
   });
@@ -12,36 +13,42 @@ export default function AddJob() {
   function submitJob(event) {
     event.preventDefault();
     const addJob = async () => {
-      const response = axios.post(baseURL, addNewJob);
+      const response = axios.post(baseURL, newJob);
       setNewJobs(response);
     };
     addJob();
+    setNewJobs({ title: "", description: "" });
   }
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setNewJobs({ ...addNewJob, [name]: value });
+    console.log(name);
+    console.log(value);
+    setNewJobs({ ...newJob, [name]: value });
   }
 
   return (
-    <div>
-      <form className="create-job">
-        <input
-          onChange={handleChange}
-          value={addNewJob.title}
-          type="text"
-          name="title"
-          placeholder="Add a job!"
-        />
-        <input
-          onChange={handleChange}
-          value={addNewJob.description}
-          type="text"
-          name="description"
-          placeholder="Add a description!"
-        />
-        <button onClick={submitJob}></button>
-      </form>
-    </div>
+    <>
+      <Link to="/">Homepage</Link>
+      <div>
+        <form className="create-job">
+          <input
+            onChange={handleChange}
+            type="text"
+            name="title"
+            placeholder="Add a job!"
+            value={newJob.title}
+          />
+          <input
+            onChange={handleChange}
+            type="text"
+            name="description"
+            placeholder="Add a description!"
+            value={newJob.description}
+          />
+          <button onClick={submitJob}></button>
+        </form>
+      </div>
+    </>
   );
 }

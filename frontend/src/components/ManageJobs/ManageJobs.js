@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import ShowJobs from "../../pages/ShowJobs";
 //import api from "../../services/api";
 import AddJob from "../AddJob/AddJob";
@@ -36,7 +37,6 @@ export default function ManageJobs() {
   }
 
   function deleteAllJobs() {
-    console.log("e aqui?");
     const deleteJobs = async () => {
       try {
         const response = await axios.delete(baseURL);
@@ -47,22 +47,28 @@ export default function ManageJobs() {
     deleteJobs();
   }
 
+  /*  function addNewJob(newJob) {
+    setJobs([...jobs, newJob]);
+  } */
+
   return (
-    <>
-      <div>
-        {jobs.map((listOfJobs, index) => {
-          return (
-            <ShowJobs
-              key={index}
-              id={index}
-              title={listOfJobs.title}
-              description={listOfJobs.description}
-              onDelete={deleteJob}
-              onDeleteAll={deleteAllJobs}
-            />
-          );
-        })}
-      </div>
-    </>
+    <div>
+      <Link to="/">Homepage</Link>
+      {jobs.map((listOfJobs, index) => {
+        return (
+          <ShowJobs
+            key={index}
+            id={index}
+            title={listOfJobs.title}
+            description={listOfJobs.description}
+            onDelete={deleteJob}
+            onDeleteAll={deleteAllJobs}
+          />
+        );
+      })}
+    </div>
   );
 }
+/* {jobs.map((addJob) => {
+  return <AddJob onAdd={addNewJob} />;
+})} */
