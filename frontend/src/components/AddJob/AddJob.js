@@ -22,8 +22,6 @@ export default function AddJob() {
 
   function handleChange(event) {
     const { name, value } = event.target;
-    console.log(name);
-    console.log(value);
     setNewJobs({ ...newJob, [name]: value });
   }
 
