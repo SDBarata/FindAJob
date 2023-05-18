@@ -1,6 +1,6 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import AddJobService from "../services/AddJobService";
 
 export default function AddJob() {
   const [newJob, setNewJobs] = useState({
@@ -8,15 +8,10 @@ export default function AddJob() {
     description: "",
   });
 
-  const baseURL = "http://localhost:3000/api/jobs/";
-
   function submitJob(event) {
     event.preventDefault();
-    const addJob = async () => {
-      const response = axios.post(baseURL, newJob);
-      setNewJobs(response);
-    };
-    addJob();
+    AddJobService.addJob(newJob);
+    setNewJobs(newJob);
     setNewJobs({ title: "", description: "" });
   }
 

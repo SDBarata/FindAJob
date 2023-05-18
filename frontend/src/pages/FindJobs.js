@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import ShowJobsService from "../services/AddJobServices";
+import ShowJobsService from "../services/ShowJobsServices";
 
 export default function FindJobs() {
   const [jobs, setJobs] = useState([]);
@@ -16,6 +16,7 @@ export default function FindJobs() {
   }, [jobs]);
 
   function deleteJob(id) {
+    console.log("Entra aqui?");
     ShowJobsService.deleteJob(id);
   }
 

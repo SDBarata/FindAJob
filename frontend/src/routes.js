@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 import FindJobs from "./pages/FindJobs";
-import AddJob from "./components/AddJob/AddJob";
+import AddJob from "./pages/AddJob";
 import Home from "./pages/Home";
 
 export default function Routing() {
