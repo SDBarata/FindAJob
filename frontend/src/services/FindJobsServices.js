@@ -3,7 +3,7 @@ import axios, { AxiosHeaders } from "axios";
 
 const baseURL = "http://localhost:3000/api/jobs/";
 
-const ShowJobsService = {
+const FindJobsService = {
   getJobs: async function () {
     try {
       const response = await axios.get(baseURL);
@@ -30,4 +30,4 @@ const ShowJobsService = {
   },
 };
 
-export default ShowJobsService;
+export default FindJobsService;

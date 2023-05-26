@@ -22,24 +22,35 @@ export default function AddJob() {
 
   return (
     <>
-      <Link to="/">Homepage</Link>
       <div>
         <form className="create-job">
-          <input
-            onChange={handleChange}
-            type="text"
-            name="title"
-            placeholder="Add a job!"
-            value={newJob.title}
-          />
-          <input
-            onChange={handleChange}
-            type="text"
-            name="description"
-            placeholder="Add a description!"
-            value={newJob.description}
-          />
-          <button onClick={submitJob}></button>
+          <div className="title">
+            <label for="title" className="form-label">
+              Title
+            </label>
+            <input
+              onChange={handleChange}
+              type="text"
+              name="title"
+              placeholder="Add a job!"
+              value={newJob.title}
+            />
+          </div>
+          <div>
+            <label for="description" className="form-label">
+              Description
+            </label>
+            <input
+              onChange={handleChange}
+              type="text"
+              name="description"
+              placeholder="Add a description!"
+              value={newJob.description}
+            />
+          </div>
+          <button type="submit" onClick={submitJob}>
+            Add job
+          </button>
         </form>
       </div>
     </>

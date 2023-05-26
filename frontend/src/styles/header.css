@@ -1,14 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=McLaren&family=Montserrat&display=swap");
 
 header {
-  background-color: #003432;
+  background-color: #232121;
   margin: auto -16px;
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  font-family: "McLaren", cursive;
+  text-align: center;
 }
 
 header h1 {
-  color: aliceblue;
+  color: rgb(213, 213, 213);
+  box-sizing: border-box;
+  cursor: pointer;
+  margin-left: 0px;
+  display: block;
+  text-decoration: none;
+}
+
+.nav-links {
+  margin: auto 50px;
+  text-decoration: none;
+}
+
+.link1 {
+  margin-right: 20px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.link2 {
+  margin-right: 20px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
 }
 
 footer {

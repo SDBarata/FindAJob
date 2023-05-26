@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import ShowJobsService from "../services/ShowJobsServices";
+import FindJobsService from "../services/FindJobsServices";
 
 export default function FindJobs() {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
-    ShowJobsService.getJobs()
+    FindJobsService.getJobs()
       .then((response) => {
         setJobs(response.data);
       })
@@ -16,32 +16,32 @@ export default function FindJobs() {
   }, [jobs]);
 
   function deleteJob(id) {
-    console.log("Entra aqui?");
-    ShowJobsService.deleteJob(id);
+    FindJobsService.deleteJob(id);
   }
 
   function deleteAllJobs(event) {
     event.preventDefault();
-    ShowJobsService.deleteAllJobs();
+    FindJobsService.deleteAllJobs();
   }
 
   return (
-    <div>
-      <Link to="/">Homepage</Link>
+    <>
       <form>
         <button onClick={deleteAllJobs}>Remove all Jobs</button>
       </form>
-      <ul>
-        {jobs.map((listOfJobs) => (
-          <li key={listOfJobs._id}>
-            <p>{listOfJobs.title}</p>
-            <p>{listOfJobs.description}</p>
-            <button type="button" onClick={() => deleteJob(listOfJobs._id)}>
-              Remove Job
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <div className="job-class">
+        <ul className="job">
+          {jobs.map((listOfJobs) => (
+            <li key={listOfJobs._id}>
+              <h1>{listOfJobs.title}</h1>
+              <p>{listOfJobs.description}</p>
+              <button type="button" onClick={() => deleteJob(listOfJobs._id)}>
+                Remove Job
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }

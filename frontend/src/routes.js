@@ -9,7 +9,6 @@ export default function Routing() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/jobs" element={<FindJobs />} />
         <Route path="/addjob" element={<AddJob />} />
       </Routes>
