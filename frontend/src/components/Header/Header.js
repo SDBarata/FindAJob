@@ -1,24 +1,31 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <>
       <header>
-        <a href="/" style={{ textDecoration: "none" }}>
-          <h1> Find a Job! </h1>
-        </a>
+        <div>
+          <a href="/">
+            <h1> Find a Job! </h1>
+          </a>
+        </div>
         <nav className="nav-links">
-          <span className="link1">
+          <div className="link1">
             <a href="/jobs" className="link1">
               Find a Job
             </a>
-          </span>
-          <span className="link2">
+          </div>
+          <div className="link2">
             <a href="/addjob" className="link2">
               Add a Job
             </a>
-          </span>
+          </div>
+          <div>
+            <a href="/">Log in</a>
+          </div>
+          <div className="signup">
+            <a href="/">Sign up</a>
+          </div>
         </nav>
       </header>
     </>

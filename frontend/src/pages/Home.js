@@ -1,7 +1,13 @@
 import React from "react";
-import Header from "../components/Header/Header";
-import { Link } from "react-router-dom";
 
 export default function Home() {
-  return <Header />;
+  return (
+    <>
+      <body>
+        <div className="page">
+          <h1>Find the perfect job that fits you!!</h1>
+        </div>
+      </body>
+    </>
+  );
 }
