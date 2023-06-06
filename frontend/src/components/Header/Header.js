@@ -20,7 +20,7 @@ export default function Header() {
               Add a Job
             </a>
           </div>
-          <div>
+          <div className="link3">
             <a href="/">Log in</a>
           </div>
           <div className="signup">

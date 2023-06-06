@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import AddJobService from "../services/AddJobService";
 
 export default function AddJob() {
@@ -22,31 +21,34 @@ export default function AddJob() {
 
   return (
     <>
-      <div>
-        <form className="create-job">
-          <div className="title">
-            <label for="title" className="form-label">
-              Title
+      <div className="create-job">
+        <h2> Add a job</h2>
+        <form className="addjob-input">
+          <div className="input-block">
+            <label for="title" className="label">
+              <p>Title</p>
+              <input
+                className="input"
+                onChange={handleChange}
+                type="text"
+                name="title"
+                placeholder="Add a job!"
+                value={newJob.title}
+              />
             </label>
-            <input
-              onChange={handleChange}
-              type="text"
-              name="title"
-              placeholder="Add a job!"
-              value={newJob.title}
-            />
           </div>
-          <div>
-            <label for="description" className="form-label">
-              Description
+          <div className="input-block">
+            <label for="description" className="label">
+              <p>Description</p>
+              <input
+                className="input"
+                onChange={handleChange}
+                type="text"
+                name="description"
+                placeholder="Add a description!"
+                value={newJob.description}
+              />
             </label>
-            <input
-              onChange={handleChange}
-              type="text"
-              name="description"
-              placeholder="Add a description!"
-              value={newJob.description}
-            />
           </div>
           <button type="submit" onClick={submitJob}>
             Add job

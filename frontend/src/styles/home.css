@@ -1,11 +1,12 @@
 body {
   background-color: rgb(59, 59, 59);
+  margin: auto;
+  text-align: center;
 }
 .page h1 {
   text-align: center;
   color: rgb(190, 59, 59);
   opacity: 1;
-  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
-    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-  transform-style: preserve-3d;
+
+  padding: 50px;
 }
