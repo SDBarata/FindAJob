@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import FindJobsService from "../services/FindJobsServices";
 
 export default function FindJobs() {
@@ -33,7 +32,8 @@ export default function FindJobs() {
         <ul className="job">
           {jobs.map((listOfJobs) => (
             <li key={listOfJobs._id}>
-              <h1>{listOfJobs.title}</h1>
+              <h3>{listOfJobs.title}</h3>
+              <p>{listOfJobs.company}</p>
               <p>{listOfJobs.description}</p>
               <button type="button" onClick={() => deleteJob(listOfJobs._id)}>
                 Remove Job

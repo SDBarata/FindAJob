@@ -1,15 +1,43 @@
 .create-job {
-  padding: 20px;
+  margin-left: 20px;
   display: block;
-  box-sizing: 200px 300pxç.;
+  width: 350px;
+}
+
+.addjob-input {
+  width: 100%;
+}
+
+h2 {
+  text-align: justify;
+  color: tomato;
 }
 
 .input-block {
   display: block;
   text-align: left;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-size: 16px;
+
+  color: rgb(15, 153, 29);
 }
 
 p {
   margin: 0;
   padding: 0;
+}
+
+.input {
+  width: 90%;
+  padding: 6px 8px;
+  border: 1px solid;
+  border-radius: 2px;
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1),
+    0 0 5px 2px rgba(212, 212, 212, 0);
+  font-size: 14px;
+  line-height: 16px;
+  outline: none;
 }

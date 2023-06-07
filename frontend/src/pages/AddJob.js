@@ -4,6 +4,7 @@ import AddJobService from "../services/AddJobService";
 export default function AddJob() {
   const [newJob, setNewJobs] = useState({
     title: "",
+    company: "",
     description: "",
   });
 
@@ -11,7 +12,7 @@ export default function AddJob() {
     event.preventDefault();
     AddJobService.addJob(newJob);
     setNewJobs(newJob);
-    setNewJobs({ title: "", description: "" });
+    setNewJobs({ title: "", company: "", description: "" });
   }
 
   function handleChange(event) {
@@ -32,8 +33,21 @@ export default function AddJob() {
                 onChange={handleChange}
                 type="text"
                 name="title"
-                placeholder="Add a job!"
+                placeholder="Job Title"
                 value={newJob.title}
+              />
+            </label>
+          </div>
+          <div className="input-block">
+            <label for="company" className="label">
+              <p>Company</p>
+              <input
+                className="input"
+                onChange={handleChange}
+                type="text"
+                name="company"
+                placeholder="Company's name"
+                value={newJob.company}
               />
             </label>
           </div>
@@ -50,7 +64,7 @@ export default function AddJob() {
               />
             </label>
           </div>
-          <button type="submit" onClick={submitJob}>
+          <button className="submit-button" type="submit" onClick={submitJob}>
             Add job
           </button>
         </form>

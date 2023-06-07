@@ -9,11 +9,11 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <Routing />
       <Footer />
-    </div>
+    </>
   );
 }
 
