@@ -34,7 +34,9 @@ export default function FindJobs() {
             <li key={listOfJobs._id}>
               <h3>{listOfJobs.title}</h3>
               <p>{listOfJobs.company}</p>
+              <p>{listOfJobs.location}</p>
               <p>{listOfJobs.description}</p>
+              <p>{listOfJobs.jobtype}</p>
               <button type="button" onClick={() => deleteJob(listOfJobs._id)}>
                 Remove Job
               </button>

@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=McLaren&family=Montserrat&display=swap");
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 header {
   background-color: rgb(41, 40, 40);
-  margin: auto;
   padding: 0px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   display: flex;
@@ -47,6 +52,7 @@ footer {
   width: 100%;
   height: 2.5rem;
   gap: 20px;
+  bottom: 0;
 }
 
 .footer-icons {
