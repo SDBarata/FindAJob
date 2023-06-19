@@ -1,19 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=McLaren&family=Montserrat&display=swap");
 
-#root {
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: rgb(90, 89, 89);
+  margin: 0;
+  text-align: center;
 }
 
 header {
-  background-color: rgb(41, 40, 40);
+  background-color: rgb(21, 21, 21);
   padding: 0px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: space-between;
   font-family: "McLaren", cursive;
   text-align: center;
+  height: 5rem;
 }
 
 header a {
@@ -24,16 +28,25 @@ header a {
   text-decoration: none;
 }
 
+.web-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .nav-links {
   margin: auto 50px;
-  text-decoration: none;
   display: flex;
   gap: 30px;
 }
 
 .nav-links a {
   color: rgb(255, 255, 255);
-  text-decoration: none;
+  transition-duration: 0.5s;
+}
+
+.nav-links a:hover {
+  color: rgb(119, 115, 115);
 }
 
 .signup a {
@@ -48,11 +61,11 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  bottom: 0;
   width: 100%;
-  height: 2.5rem;
+  height: 4rem;
   gap: 20px;
   bottom: 0;
+  background-color: rgb(21, 21, 21);
 }
 
 .footer-icons {
