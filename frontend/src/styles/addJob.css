@@ -1,13 +1,9 @@
 .create-job {
-  margin-left: 20px;
+  margin-left: 30px;
   display: flex;
   width: 350px;
   flex-direction: column;
   flex-grow: 1;
-}
-
-.addjob-input {
-  width: 100%;
 }
 
 h2 {
@@ -23,7 +19,6 @@ h2 {
 
 .label {
   font-size: 16px;
-
   color: rgb(151, 155, 151);
 }
 
@@ -42,6 +37,12 @@ p {
   font-size: 14px;
   line-height: 16px;
   outline: none;
+}
+
+.addjob-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .submit-button {

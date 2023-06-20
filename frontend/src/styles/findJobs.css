@@ -1,44 +1,29 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-.job {
-  background: #fff;
-  border-radius: 7px;
-  box-shadow: 0 2px 5px #ccc;
-  padding: 10px;
-  width: 240px;
-  margin: 16px;
-  float: left;
+.jobs-list {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: center;
 }
 
-.job h1 {
-  font-size: 1.1em;
-  margin-bottom: 6px;
-}
-.job li {
+.grid-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
   list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-.job p {
-  font-size: 1.1em;
-  margin-bottom: 10px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
+  height: 50vh;
+  margin: 30px;
 }
 
-.job button {
-  position: relative;
-  float: right;
-  margin-right: 10px;
-  color: #f5ba13;
-  border: none;
-  width: 36px;
-  height: 36px;
-  cursor: pointer;
-  outline: none;
+.grid-item {
+  border: 1px solid;
+  border-radius: 10px;
+  border-color: rgb(51, 50, 49);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  background-color: rgb(245, 245, 245);
 }
 
-/* usar o grid para aqui */
+.grid-item h3 {
+  color: rgb(0, 0, 0);
+  text-decoration: solid;
+}

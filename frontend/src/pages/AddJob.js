@@ -99,11 +99,12 @@ export default function AddJob() {
             </label>
             <p>* Mandatory fields</p>
           </div>
-
+        </form>
+        <div className="addjob-button">
           <button className="submit-button" type="submit" onClick={submitJob}>
             Add job
           </button>
-        </form>
+        </div>
       </div>
     </>
   );

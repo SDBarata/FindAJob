@@ -25,13 +25,10 @@ export default function FindJobs() {
 
   return (
     <>
-      <form>
-        <button onClick={deleteAllJobs}>Remove all Jobs</button>
-      </form>
-      <div className="job-class">
-        <ul className="job">
+      <div className="jobs-list">
+        <div className="grid-container">
           {jobs.map((listOfJobs) => (
-            <li key={listOfJobs._id}>
+            <li className="grid-item" key={listOfJobs._id}>
               <h3>{listOfJobs.title}</h3>
               <p>{listOfJobs.company}</p>
               <p>{listOfJobs.location}</p>
@@ -42,7 +39,10 @@ export default function FindJobs() {
               </button>
             </li>
           ))}
-        </ul>
+        </div>
+        <form>
+          <button onClick={deleteAllJobs}>Remove all Jobs</button>
+        </form>
       </div>
     </>
   );

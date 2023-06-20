@@ -18,10 +18,6 @@ export default function Home() {
         ></div>
         <div className="page">
           <h1>Find the perfect job that fits you!!</h1>
-          <h1>Find the perfect job that fits you!!</h1>
-          <h1>Find the perfect job that fits you!!</h1>
-          <h1>Find the perfect job that fits you!!</h1>
-          <h1>Find the perfect job that fits you!!</h1>
         </div>
       </div>
     </>

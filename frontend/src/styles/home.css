@@ -1,4 +1,13 @@
 .home-body {
+  background-image: url("https://www.portugalist.com/wp-content/uploads/job-interview-candidates.jpg");
+  background-position: 50% -120.05px, 50%;
+  background-size: cover;
+  background-image: linear-gradient(
+    rgba(19, 19, 19, 0.8),
+    rgba(19, 19, 19, 0.8)
+  );
+  width: auto;
+  flex-grow: 1;
 }
 .page h1 {
   text-align: center;
