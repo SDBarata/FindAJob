@@ -21,9 +21,9 @@ const getJobById = async (req, res) => {
 const createJob = async (req, res) => {
   const {
     title,
-    description,
     company,
     location,
+    description,
     jobtype,
     salary,
     creationDate,
@@ -32,9 +32,9 @@ const createJob = async (req, res) => {
 
   const job = new Model({
     title,
-    description,
     company,
     location,
+    description,
     jobtype,
     salary,
     creationDate,
