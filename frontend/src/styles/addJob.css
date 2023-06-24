@@ -11,6 +11,15 @@ h2 {
   color: rgb(255, 255, 255);
 }
 
+@media (min-width: 155px) and (max-width: 333px) {
+  .input-block {
+    width: 155px;
+  }
+  .addjob-button {
+    margin-right: 200px;
+  }
+}
+
 .input-block {
   display: block;
   text-align: left;
@@ -23,8 +32,7 @@ h2 {
 }
 
 p {
-  margin: 0;
-  padding: 0;
+  margin: 5px 0;
 }
 
 .input {
@@ -39,9 +47,42 @@ p {
   outline: none;
 }
 
-.addjob-button {
+.jobtype-class {
+  position: relative;
+  display: inline-flex;
+  background: #fff;
+  border: 1px solid;
+  border-radius: 4px;
+  line-height: 16px;
+  outline: none;
+  width: 95%;
+  height: 30px;
+}
+
+.jobtype-button {
+  background: none;
+  border: none;
   display: flex;
   align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.button-menu1 {
+  width: 90%;
+  padding: 6px 8px;
+}
+
+.button-menu2 {
+}
+
+/* .select-options {
+  cursor: pointer;
+} */
+
+.addjob-button {
+  display: flex;
   justify-content: center;
 }
 
