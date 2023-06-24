@@ -25,6 +25,7 @@ export default function AddJob() {
 
   function handleChange(event) {
     const { name, value } = event.target;
+    console.log(value);
     setNewJobs({ ...newJob, [name]: value });
   }
 
@@ -78,6 +79,7 @@ export default function AddJob() {
             </label>
             <input
               className="input"
+              onChange={handleChange}
               type="text"
               name="description"
               placeholder="Description"
@@ -88,69 +90,51 @@ export default function AddJob() {
             <label for="jobtype" className="label">
               Job type *
             </label>
-            <input
-              className="input"
-              onChange={handleChange}
-              type="text"
-              name="jobtype"
-              placeholder="Add the job type (e.g. Full/Part-time)"
-              value={newJob.jobtype}
-            />
+            <select className="jobtype-class">
+              <option
+                value={(newJob.jobtype = "Full-time")}
+                onChangeValue={handleChange}
+              >
+                Full-time
+              </option>
+              <option
+                value={(newJob.jobtype = "Part-time")}
+                onChangeValue={handleChange}
+              >
+                Part-time
+              </option>
+              <option
+                value={(newJob.jobtype = "Contract")}
+                onChangeValue={handleChange}
+              >
+                Contract
+              </option>
+              <option
+                value={(newJob.jobtype = "Temporary")}
+                onChangeValue={handleChange}
+              >
+                Temporary
+              </option>
+              <option
+                value={(newJob.jobtype = "Internship")}
+                onChangeValue={handleChange}
+              >
+                Internship
+              </option>
+              <option
+                value={(newJob.jobtype = "Volunteer")}
+                onChangeValue={handleChange}
+              >
+                Voluteer
+              </option>
+              <option
+                value={(newJob.jobtype = "Other")}
+                onChangeValue={handleChange}
+              >
+                Other
+              </option>
+            </select>
             <p>* Mandatory fields</p>
-          </div>
-
-          {/* <div className="jobtype-class">
-            <button
-              type="button"
-              className="button-jobtype"
-              aria-expanded="false"
-              aria-label="jobtype-menu"
-            ></button>
-            "Full time"
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16"
-              data-supported-dps="16x16"
-              fill="currentColor"
-              className="select-options"
-              width="16"
-              height="16"
-              focusable="false"
-            >
-              <path
-                d="M8 11L3 6h10z"
-                fill-rule="evenodd"
-                fill="currentColor"
-              ></path>
-            </svg>
-          </div>
-          <div className="" aria-hidden="true">
-            <ul>
-              <button value="fulltime" className="jobtype">
-                <div className="label">"Full-time"</div>
-              </button>
-            </ul>
-          </div> */}
-          <div className="input-block">
-            <label for="jobtype" className="label">
-              Job type *
-            </label>
-            <div className="jobtype-class">
-              <button type="button" className="jobtype-button button-menu1">
-                <span className="icons-class"></span>
-              </button>
-              <button type="button" className="jobtype-button button-menu2">
-                <span className="material-symbols-outlined">expand_more</span>
-              </button>
-              <div className="jobtype-list">
-                <button type="button" className="button-list">
-                  <span>"Full-time"</span>
-                </button>
-                <button type="button" className="button-list">
-                  <span>"Part-time"</span>
-                </button>
-              </div>
-            </div>
           </div>
         </form>
 
